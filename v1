@@ -1,0 +1,57 @@
+'''
+Finding the largest palindrome product of two n digits numbers.
+'''
+
+print("This python program will show the highest palindrome number that is a product of two numbers of n digits. \nPiece of advice: if you are looking for the highest palindrome that is a product of 3 digit numbers, set the lowest limit \nto 9900 and highest limit to 10000.\nIn order to speed the process, work with the lowest possible range.")
+print("Note. A palindromic number reads the same both ways.")
+x = int(input("Lowest limit of the range: "))
+y = int(input("Highest limit of the range: "))
+str_x = str(x)
+mylist_k = []
+mylist_i = []
+mylist_j = []
+for i in range(x, y):
+    for j in range(x, y):
+        k = i*j
+        if str(k) == str(k)[::-1] and k not in mylist_k:
+            mylist_k = mylist_k + [k]
+            mylist_i = mylist_i + [i]
+            mylist_j = mylist_j + [j]
+        else:
+            mylist_k = mylist_k
+            mylist_i = mylist_i
+            mylist_j = mylist_j         
+if len(mylist_k) == 0:
+    print("There are no such numbers in this range. Try a lowest limit, maybe %.0i." %(x-10**(len(str_x)-2)))
+else:
+    print("%.0i is the product of %.0i times %.0i." %(mylist_k[len(mylist_k)-1], mylist_i[len(mylist_i)-1], mylist_j[len(mylist_j)-1]))
+    
+    
+    
+OUTPUTS
+This python program will show the highest palindrome number that is a product of two numbers of n digits. 
+Piece of advice: if you are looking for the highest palindrome that is a product of 3 digit numbers, set the lowest limit 
+to 9900 and highest limit to 10000.
+In order to speed the process, work with the lowest possible range.
+Note. A palindromic number reads the same both ways.
+Lowest limit of the range: 900
+Highest limit of the range: 1000
+888888 is the product of 924 times 962.
+
+This python program will show the highest palindrome number that is a product of two numbers of n digits. 
+Piece of advice: if you are looking for the highest palindrome that is a product of 3 digit numbers, set the lowest limit 
+to 9900 and highest limit to 10000.
+In order to speed the process, work with the lowest possible range.
+Note. A palindromic number reads the same both ways.
+Lowest limit of the range: 99900
+Highest limit of the range: 100000
+There are no such numbers in this range. Try a lowest limit, maybe 98900.
+
+This python program will show the highest palindrome number that is a product of two numbers of n digits. 
+Piece of advice: if you are looking for the highest palindrome that is a product of 3 digit numbers, set the lowest limit 
+to 9900 and highest limit to 10000.
+In order to speed the process, work with the lowest possible range.
+Note. A palindromic number reads the same both ways.
+Lowest limit of the range: 98900
+Highest limit of the range: 100000
+9966006699 is the product of 99681 times 99979.
